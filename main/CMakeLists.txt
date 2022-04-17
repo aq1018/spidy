@@ -1,4 +1,6 @@
+file(GLOB srcs *.cpp)
+
 idf_component_register(
-    SRCS "main.c"
+    SRCS ${srcs}
     INCLUDE_DIRS "."
 )
