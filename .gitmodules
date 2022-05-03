@@ -5,3 +5,6 @@
 [submodule "vendor/arduino-esp32a"]
 	path = vendor/arduino
 	url = https://github.com/espressif/arduino-esp32.git
+[submodule "vendor/btstack"]
+	path = vendor/btstack
+	url = https://github.com/bluekitchen/btstack.git
