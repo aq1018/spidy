@@ -30,4 +30,79 @@ I personally bought a [7.4V LiPo Battery](https://www.amazon.com/gp/product/B016
 
 ### Software
 
-TBD
+I used the official [ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html) as the base library for ESP32 boards. This is because it offers all the flexibility such as `ledc` fade functionality to provide efficient control over leg movements as well as bluetooth connectivity which allows me to use a PS4 controller to control the robot. I also used the following 3rd party libraries for various purposes:
+
+* [Bluepad32](https://github.com/ricardoquesada/bluepad32) - Bluetooth gamepad connectivity.
+* [btstack](https://github.com/bluekitchen/btstack) - Needed by `Bluepad32`. Low level bluetooth stack.
+* [ESP32Servo](https://github.com/madhephaestus/ESP32Servo) - Arduino compatible servo interface with ESP32 ledc. This will be replaced with custom implementation soon.
+* [esp32-arduino](https://github.com/espressif/arduino-esp32) - Arduino component for ESP32. Provides Arduino interfaces. Needed by `Bluepad32` and `ESP32Servo` components.
+
+## Setup
+
+### 1. Install esp-idf
+
+You need to install the [Espressif IoT Development Framework](https://github.com/espressif/esp-idf) in order to build this project.
+
+For windows, please follow [the official documentation](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/windows-setup.html) to install.
+
+For Linux & MacOS, please [follow this official documentation](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/linux-macos-setup.html).
+
+### 2. Clone this repository
+
+```
+git clone https://github.com/aq1018/spidy.git --recursive
+```
+
+### 3. Install `btstack` Component
+
+In a terminal, initialize the ESP-IDF environment by using the command below:
+
+```
+. ~/esp/esp-idf/export.sh
+```
+
+Note, this is assuming you have installed `esp-idf` under `~/esp/esp-idf`.
+
+Next, go to the `btstack` directory.
+
+```
+# assuming you are in the project root, navigate to btstack by:
+cd vendor/bluepad32/external/btstack
+
+# now you need to go to the esp32 port:
+cd port/esp32
+
+# now run the following to integrate `btstack` to `esp-idf`:
+./integrate_btstack.py
+
+# check your esp-idf components dir, and you should see files there.
+ls ~/esp/esp-idf/components/btstack
+```
+
+### 4. Build Project
+
+If you haven't done so, in a terminal, initialize the ESP-IDF environment by using the command below:
+
+```
+. ~/esp/esp-idf/export.sh
+```
+
+Now under your project root run the following terminal command:
+
+```
+idf.py build
+```
+
+This should build the project.
+
+Alternatively, if you use VSCode, you can install the [Espressif IDF](https://marketplace.visualstudio.com/items?itemName=espressif.esp-idf-extension) plugin, and then you can build, flash and monitor with a single button.
+
+### 5. Upload binary to MCU
+
+Run the following to flash your MCU:
+
+```
+idf.py flash
+```
+
+Or use VSCode Espressif IDF as described in previous section.
