@@ -2,3 +2,6 @@
 	path = components/arduino
 	url = https://github.com/espressif/arduino-esp32.git
 	branch = 2.0.2
+[submodule "vendor/arduino-esp32a"]
+	path = vendor/arduino
+	url = https://github.com/espressif/arduino-esp32.git
