@@ -7,8 +7,4 @@
 # please read the ESP-IDF documents if you need to do this.
 #
 
-ifndef CONFIG_BLUEPAD32_PLATFORM_ARDUINO
-
-COMPONENT_OBJEXCLUDE += arduino_main.o
-
-endif # CONFIG_BLUEPAD32_PLATFORM_ARDUINO
+COMPONENT_ADD_INCLUDEDIRS := include

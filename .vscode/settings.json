@@ -84,8 +84,12 @@
         "streambuf": "cpp",
         "thread": "cpp",
         "cinttypes": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "esp_hidd.h": "c"
     },
     "idf.flashType": "UART",
-    "idf.espIdfPath": "/Users/aaronqian/esp/esp-idf"
+    "idf.espIdfPath": "/Users/aaronqian/esp/esp-idf",
+    "cSpell.words": [
+        "HIDH"
+    ]
 }

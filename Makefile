@@ -3,6 +3,6 @@
 # project subdirectory.
 #
 
-PROJECT_NAME := ledc_basic
+PROJECT_NAME := spidey
 
 include $(IDF_PATH)/make/project.mk
