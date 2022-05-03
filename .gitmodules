@@ -1,6 +1,6 @@
-[submodule "components/arduino"]
-	path = components/arduino
-	url = https://github.com/espressif/arduino-esp32.git
 [submodule "vendor/bluepad32"]
 	path = vendor/bluepad32
 	url = https://github.com/ricardoquesada/bluepad32.git
+[submodule "vendor/arduino"]
+	path = vendor/arduino
+	url = https://github.com/espressif/arduino-esp32.git
