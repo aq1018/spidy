@@ -8,3 +8,6 @@
 [submodule "vendor/btstack"]
 	path = vendor/btstack
 	url = https://github.com/bluekitchen/btstack.git
+[submodule "vendor/bluepad32"]
+	path = vendor/bluepad32
+	url = https://github.com/ricardoquesada/bluepad32.git
